@@ -12,3 +12,10 @@ chmod +x /usr/local/bin/dvmsnmp.py
 pass_persist .1.3.6.1.4.1.69420 /usr/local/bin/dvmsnmp.py
 ```
 
+# /etc/dvmsnmp.conf
+```ini
+[connection]
+host = host-or-ip
+port = port
+password = password
+```
