@@ -4,7 +4,7 @@ import configparser
 import os
 import sys
 from typing import Callable, Dict, Tuple, Any
-import dvmrest
+import ext.pydvm.dvmrest as dvmrest
 
 
 # Grab the configs

@@ -1,0 +1,3 @@
+[submodule "ext/pydvm"]
+	path = ext/pydvm
+	url = git@github.com:DVMProject/pydvm.git
