@@ -1,6 +1,8 @@
 # DVMSNMP
 Allow dvmhost to be monitored via net-snmp.
 
+Special thanks to W3AXL for [dvmrest](https://github.com/DVMProject/pydvm/).
+
 ### Clone the repository locally.
 ```
 git clone ...
