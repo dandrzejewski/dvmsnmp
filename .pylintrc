@@ -1,6 +1,2 @@
-[MASTER]
-# This should help with the lack of __init__.py in ext/dvmrest
-init-hook='import sys; sys.path.insert(0, ".")'
-
 [MESSAGES CONTROL]
 disable=W0718
