@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-
+"""
+Module to provide dvmhost/dvmfne data to snmpd.
+"""
 import configparser
 import os
 import sys
 from typing import Callable, Dict, Tuple, Any
-import ext.pydvm.dvmrest as dvmrest
+from ext.pydvm import dvmrest
 
 
 # Grab the configs
@@ -68,8 +70,7 @@ def get_total_peers() -> SNMPType:
         return ("integer", total)
     except Exception as e:
         return ("string", f"Error: {e}")
-    
-        
+
 def count_total_affiliations(affiliations: Dict[str, Any]) -> int:
     """
     Counts the total number of affiliations in the system.
@@ -151,22 +152,21 @@ def main() -> None:
             sys.stdout.flush()
             continue
 
-        elif line == "get":
+        if line == "get":
             oid: str = sys.stdin.readline().strip()
             handle_get(oid)
             sys.stdout.flush()
             continue
 
-        elif line == "getnext":
+        if line == "getnext":
             oid: str = sys.stdin.readline().strip()
             handle_getnext(oid)
             sys.stdout.flush()
             continue
 
-        else:
-            # Unrecognized input
-            print("NONE")
-            sys.stdout.flush()
+        # Unrecognized input
+        print("NONE")
+        sys.stdout.flush()
 
 if __name__ == "__main__":
     main()
